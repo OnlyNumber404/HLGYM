@@ -1,4 +1,4 @@
-﻿Imports Microsoft.VisualBasic.ApplicationServices
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Namespace My
     ' The following events are available for MyApplication:
@@ -11,7 +11,18 @@ Namespace My
         Public DBA As DBAccess
 
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
-            DBA = New DBAccess("", "", Environment.GetEnvironmentVariable("DB_DatabaseName"), Environment.GetEnvironmentVariable("DB_Username"), Environment.GetEnvironmentVariable("DB_Password")
+            Try
+                EnvConfig.Load()
+
+                Dim server As String = EnvConfig.GetValue("DB_Server")
+                Dim dbName As String = EnvConfig.GetValue("DB_DatabaseName")
+                Dim dbUser As String = EnvConfig.GetValue("DB_Username")
+                Dim dbPassword As String = EnvConfig.GetValue("DB_Password")
+
+                DBA = New DBAccess(server, "", dbName, dbUser, dbPassword)
+            Catch ex As Exception
+                MessageBox.Show("Gagal memuat konfigurasi dari .env:" & vbCrLf & ex.Message, "Error Konfigurasi", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End Sub
     End Class
 End Namespace

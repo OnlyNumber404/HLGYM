@@ -55,8 +55,11 @@ Public Class DBAccess
         Catch ex As Exception
             MessageBox.Show("Error DBA.User_GetAll: " & ex.Message, "Error DBA", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return Nothing
+        Finally
+            CloseSQLConn()
         End Try
     End Function
+
 End Class
 
 
