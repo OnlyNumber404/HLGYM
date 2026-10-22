@@ -37,6 +37,7 @@ Partial Class MainFrm
         Me.lblSettingInfo = New MaterialSkin.Controls.MaterialLabel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbDateTime = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lbDbStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.pnlBody = New System.Windows.Forms.Panel()
         Me.pnlSidebar = New System.Windows.Forms.Panel()
         Me.pnlNavButtons = New System.Windows.Forms.Panel()
@@ -51,7 +52,6 @@ Partial Class MainFrm
         Me.pnlBrand = New System.Windows.Forms.Panel()
         Me.lblBrandTitle = New MaterialSkin.Controls.MaterialLabel()
         Me.dividerSidebar = New MaterialSkin.Controls.MaterialDivider()
-        Me.lbDbStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tabMain.SuspendLayout()
         Me.tabUserAllList.SuspendLayout()
         Me.tabMember.SuspendLayout()
@@ -81,7 +81,7 @@ Partial Class MainFrm
         Me.tabMain.MouseState = MaterialSkin.MouseState.HOVER
         Me.tabMain.Name = "tabMain"
         Me.tabMain.SelectedIndex = 0
-        Me.tabMain.Size = New System.Drawing.Size(980, 776)
+        Me.tabMain.Size = New System.Drawing.Size(980, 778)
         Me.tabMain.TabIndex = 1
         '
         'tabUserAllList
@@ -90,7 +90,7 @@ Partial Class MainFrm
         Me.tabUserAllList.Controls.Add(Me.pnlUserListContainer)
         Me.tabUserAllList.Location = New System.Drawing.Point(4, 29)
         Me.tabUserAllList.Name = "tabUserAllList"
-        Me.tabUserAllList.Size = New System.Drawing.Size(972, 743)
+        Me.tabUserAllList.Size = New System.Drawing.Size(972, 745)
         Me.tabUserAllList.TabIndex = 0
         Me.tabUserAllList.Text = "USER ALL LIST"
         '
@@ -99,7 +99,7 @@ Partial Class MainFrm
         Me.pnlUserListContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlUserListContainer.Location = New System.Drawing.Point(0, 0)
         Me.pnlUserListContainer.Name = "pnlUserListContainer"
-        Me.pnlUserListContainer.Size = New System.Drawing.Size(972, 743)
+        Me.pnlUserListContainer.Size = New System.Drawing.Size(972, 745)
         Me.pnlUserListContainer.TabIndex = 0
         '
         'tabMember
@@ -109,7 +109,7 @@ Partial Class MainFrm
         Me.tabMember.Location = New System.Drawing.Point(4, 29)
         Me.tabMember.Name = "tabMember"
         Me.tabMember.Padding = New System.Windows.Forms.Padding(20)
-        Me.tabMember.Size = New System.Drawing.Size(972, 767)
+        Me.tabMember.Size = New System.Drawing.Size(972, 743)
         Me.tabMember.TabIndex = 1
         Me.tabMember.Text = "MEMBER"
         '
@@ -133,7 +133,7 @@ Partial Class MainFrm
         Me.tabMembership.Location = New System.Drawing.Point(4, 29)
         Me.tabMembership.Name = "tabMembership"
         Me.tabMembership.Padding = New System.Windows.Forms.Padding(20)
-        Me.tabMembership.Size = New System.Drawing.Size(972, 767)
+        Me.tabMembership.Size = New System.Drawing.Size(972, 743)
         Me.tabMembership.TabIndex = 2
         Me.tabMembership.Text = "MEMBERSHIP"
         '
@@ -157,7 +157,7 @@ Partial Class MainFrm
         Me.tabBilling.Location = New System.Drawing.Point(4, 29)
         Me.tabBilling.Name = "tabBilling"
         Me.tabBilling.Padding = New System.Windows.Forms.Padding(20)
-        Me.tabBilling.Size = New System.Drawing.Size(972, 767)
+        Me.tabBilling.Size = New System.Drawing.Size(972, 743)
         Me.tabBilling.TabIndex = 3
         Me.tabBilling.Text = "BILLING"
         '
@@ -181,7 +181,7 @@ Partial Class MainFrm
         Me.tabMembershipType.Location = New System.Drawing.Point(4, 29)
         Me.tabMembershipType.Name = "tabMembershipType"
         Me.tabMembershipType.Padding = New System.Windows.Forms.Padding(20)
-        Me.tabMembershipType.Size = New System.Drawing.Size(972, 767)
+        Me.tabMembershipType.Size = New System.Drawing.Size(972, 743)
         Me.tabMembershipType.TabIndex = 4
         Me.tabMembershipType.Text = "MEMBERSHIP TYPE"
         '
@@ -205,7 +205,7 @@ Partial Class MainFrm
         Me.tabSetting.Location = New System.Drawing.Point(4, 29)
         Me.tabSetting.Name = "tabSetting"
         Me.tabSetting.Padding = New System.Windows.Forms.Padding(20)
-        Me.tabSetting.Size = New System.Drawing.Size(972, 767)
+        Me.tabSetting.Size = New System.Drawing.Size(972, 743)
         Me.tabSetting.TabIndex = 5
         Me.tabSetting.Text = "SETTING"
         '
@@ -227,9 +227,9 @@ Partial Class MainFrm
         Me.StatusStrip1.BackColor = System.Drawing.Color.White
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbDateTime, Me.lbDbStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 776)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 778)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1200, 24)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1200, 22)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -238,6 +238,11 @@ Partial Class MainFrm
         Me.lbDateTime.Name = "lbDateTime"
         Me.lbDateTime.Size = New System.Drawing.Size(0, 18)
         '
+        'lbDbStatus
+        '
+        Me.lbDbStatus.Name = "lbDbStatus"
+        Me.lbDbStatus.Size = New System.Drawing.Size(0, 18)
+        '
         'pnlBody
         '
         Me.pnlBody.Controls.Add(Me.tabMain)
@@ -245,7 +250,7 @@ Partial Class MainFrm
         Me.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlBody.Location = New System.Drawing.Point(0, 0)
         Me.pnlBody.Name = "pnlBody"
-        Me.pnlBody.Size = New System.Drawing.Size(1200, 776)
+        Me.pnlBody.Size = New System.Drawing.Size(1200, 778)
         Me.pnlBody.TabIndex = 2
         '
         'pnlSidebar
@@ -258,7 +263,7 @@ Partial Class MainFrm
         Me.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSidebar.Location = New System.Drawing.Point(0, 0)
         Me.pnlSidebar.Name = "pnlSidebar"
-        Me.pnlSidebar.Size = New System.Drawing.Size(220, 776)
+        Me.pnlSidebar.Size = New System.Drawing.Size(220, 778)
         Me.pnlSidebar.TabIndex = 0
         '
         'pnlNavButtons
@@ -274,7 +279,7 @@ Partial Class MainFrm
         Me.pnlNavButtons.Location = New System.Drawing.Point(0, 56)
         Me.pnlNavButtons.Name = "pnlNavButtons"
         Me.pnlNavButtons.Padding = New System.Windows.Forms.Padding(8, 6, 8, 6)
-        Me.pnlNavButtons.Size = New System.Drawing.Size(219, 660)
+        Me.pnlNavButtons.Size = New System.Drawing.Size(219, 662)
         Me.pnlNavButtons.TabIndex = 1
         '
         'btnNavSetting
@@ -377,7 +382,7 @@ Partial Class MainFrm
         '
         Me.pnlSidebarBottom.Controls.Add(Me.btnExit)
         Me.pnlSidebarBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlSidebarBottom.Location = New System.Drawing.Point(0, 716)
+        Me.pnlSidebarBottom.Location = New System.Drawing.Point(0, 718)
         Me.pnlSidebarBottom.Name = "pnlSidebarBottom"
         Me.pnlSidebarBottom.Padding = New System.Windows.Forms.Padding(10)
         Me.pnlSidebarBottom.Size = New System.Drawing.Size(219, 60)
@@ -428,13 +433,8 @@ Partial Class MainFrm
         Me.dividerSidebar.Location = New System.Drawing.Point(219, 0)
         Me.dividerSidebar.MouseState = MaterialSkin.MouseState.HOVER
         Me.dividerSidebar.Name = "dividerSidebar"
-        Me.dividerSidebar.Size = New System.Drawing.Size(1, 776)
+        Me.dividerSidebar.Size = New System.Drawing.Size(1, 778)
         Me.dividerSidebar.TabIndex = 3
-        '
-        'lbDbStatus
-        '
-        Me.lbDbStatus.Name = "lbDbStatus"
-        Me.lbDbStatus.Size = New System.Drawing.Size(0, 18)
         '
         'MainFrm
         '

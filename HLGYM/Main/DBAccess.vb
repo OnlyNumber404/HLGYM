@@ -1,4 +1,4 @@
-﻿Imports System.Data.SqlClient
+Imports System.Data.SqlClient
 
 Public Class DBAccess
     Private SqlConn As SqlConnection
@@ -60,6 +60,49 @@ Public Class DBAccess
         End Try
     End Function
 
+    Public Function UserInsert(User As Users) As String
+        Try
+            OpenSQLConn()
+            Dim SQLCmd As New SqlCommand("sp_User_Create", SqlConn)
+            SQLCmd.CommandType = CommandType.StoredProcedure
+
+            SQLCmd.Parameters.Add("@Username", SqlDbType.VarChar, 50).Value = User.Username
+            SQLCmd.Parameters.Add("@PasswordHash", SqlDbType.VarChar, 255).Value = User.PasswordHash
+            SQLCmd.Parameters.Add("@FullName", SqlDbType.VarChar, 100).Value = User.FullName
+            SQLCmd.Parameters.Add("@Role", SqlDbType.VarChar, 20).Value = If(String.IsNullOrWhiteSpace(User.Role), "Staff", User.Role)
+
+            If User.Gambar IsNot Nothing AndAlso User.Gambar.Length > 0 Then
+                SQLCmd.Parameters.Add("@Gambar", SqlDbType.Image).Value = User.Gambar
+            Else
+                SQLCmd.Parameters.Add("@Gambar", SqlDbType.Image).Value = DBNull.Value
+            End If
+
+            SQLCmd.ExecuteNonQuery()
+            Return "Sukses"
+        Catch ex As Exception
+            MessageBox.Show("Error DBA.User_Create: " & ex.Message, "Error DBA", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return "Gagal"
+        Finally
+            CloseSQLConn()
+        End Try
+    End Function
+
+    Public Function UserHapus(IdUser As Integer) As String
+        Try
+            OpenSQLConn()
+            Dim SQLCmd As New SqlCommand("sp_User_Delete", SqlConn)
+            SQLCmd.CommandType = CommandType.StoredProcedure
+
+            SQLCmd.Parameters.Add("@UserID", SqlDbType.Int).Value = IdUser
+
+            SQLCmd.ExecuteNonQuery()
+            Return "Sukses"
+
+        Catch ex As Exception
+            MessageBox.Show("Error DBA.User_Delete: " & ex.Message, "Error DBA", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return "Gagal"
+        Finally
+            CloseSQLConn()
+        End Try
+    End Function
 End Class
-
-

@@ -102,6 +102,7 @@
       <DependentUpon>MainFrm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Main\Security.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -130,6 +131,12 @@
     <Compile Include="Users\frm_UserAllList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Users\frm_UserEdit.Designer.vb">
+      <DependentUpon>frm_UserEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frm_UserEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Users\Users.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users\frm_UserAllList.resx">
       <DependentUpon>frm_UserAllList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frm_UserEdit.resx">
+      <DependentUpon>frm_UserEdit.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
